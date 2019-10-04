@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
   })
 })
 
+app.get("/ip", (req, res) => {
+  res.send(req.ip)
+})
+
 app.post("/mail", (req, res) => {
 
   const {params, host} = req.body;
