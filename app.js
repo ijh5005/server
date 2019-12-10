@@ -3,12 +3,14 @@ const app = express();
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const emailHosts = require("./emailHosts");
+const cors = require("cors");
 
 // turn off the secure mailing option to use gmail
 // https://myaccount.google.com/lesssecureapps
 
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
