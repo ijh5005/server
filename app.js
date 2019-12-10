@@ -55,8 +55,10 @@ app.post("/mail", (req, res) => {
 
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
-      console.log(error);
-      res.json({mailSent: false})
+      res.json({
+        mailSent: false,
+        error
+      })
     } else {
       res.json({mailSent: true})
     }
